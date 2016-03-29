@@ -1,0 +1,19 @@
+{
+  "name": "angular-visualization-001",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-watch": "latest",
+    "jshint-stylish": "latest"
+  }
+}
