@@ -22,17 +22,17 @@ module.exports = function(grunt) {
             },
 
             // when this task is run, lint the Gruntfile and all js files in src
-            build: ['src/js/individual/**/*.js']
+            build: ['src/js/individuals/**/*.js']
         },
         concat: {
             build: {
                 files: [{
                     expand: true,
-                    cwd: 'src/js/',
-                    src: 'individual/**/*.js',
+                    cwd: 'src/js/individuals/',
+                    src: ['modules/**/*.js', 'modules.content/**/*.js'],
                     dest: 'dist/js/',
                     rename: function (dest, src) {
-                        return dest + "dist-av1" + ".js";
+                        return dest + "dist-av" + ".js";
                     }
                     //'dist/basic.js': ['src/main.js'],
                     //'dist/with_extras.js': ['src/main.js', 'src/extras.js']
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
                 tasks: ['less']
             },
             scripts: {
-                files: ['src/js/individual/**/*.js'],
+                files: ['src/js/individuals/**/*.js'],
                 tasks: ['jshint', 'concat']
             }
         }
