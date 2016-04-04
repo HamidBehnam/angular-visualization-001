@@ -3,9 +3,9 @@
  */
 
 angular.module("av.controllers")
-    .controller("FirstController", FirstController);
+    .controller("MainController", MainController);
 
-function FirstController() {
+function MainController() {
     var vm = this;
     vm.testField = "hamid behnam";
 }

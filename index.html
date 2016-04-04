@@ -5,8 +5,12 @@
     <title>Angular Visualization</title>
     <link rel="stylesheet" href="dist/css/dist-av1.css">
 </head>
-<body ng-controller="FirstController as firstController">
-<div ng-bind="firstController.testField"></div>
+<body ng-controller="MainController as mainController">
+<div ng-bind="mainController.testField"></div>
+
+<div class="content">
+    <div ng-view></div>
+</div>
 
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
