@@ -6,7 +6,14 @@
     <link rel="stylesheet" href="dist/css/dist-av1.css">
 </head>
 <body ng-controller="MainController as mainController">
-<div ng-bind="mainController.testField"></div>
+
+<div ng-include="'src/views/header.html'"></div>
+
+<ul>
+    <li ng-repeat="link in mainController.links">
+        <a ng-href="{{'#/' + link}}" ng-bind="link"></a>
+    </li>
+</ul>
 
 <div class="content">
     <div ng-view></div>
