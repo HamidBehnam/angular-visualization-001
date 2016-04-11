@@ -3,9 +3,9 @@
  */
 
 angular.module("av.controllers")
-    .controller("MainController", MainController);
+    .controller("AppController", AppController);
 
-function MainController() {
+function AppController() {
     var vm = this;
     vm.testField = "hamid behnam";
     vm.links = ["link1", "link2"];
