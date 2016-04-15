@@ -1,9 +1,10 @@
 .av-header {
   color: white;
   background-color: #3D4955;
-  height: 50px;
-  line-height: 50px;
+  height: @header-height;
+  line-height: @header-height;
   padding-right: 15px;
+  position: relative;
 
   .header-icons {
     font-size: 20px;
@@ -15,5 +16,33 @@
         cursor: pointer;
       }
     }
+  }
+
+  .main-left-opener {
+    -webkit-transition: -webkit-transform ease-in-out 500ms 0ms;
+    -moz-transition: -moz-transform ease-in-out 500ms 0ms;
+    -ms-transition: -ms-transform ease-in-out 500ms 0ms;
+    -o-transition: -o-transform ease-in-out 500ms 0ms;
+    transition: transform ease-in-out 500ms 0ms;
+
+    &.open {
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+  }
+
+  .logo {
+    width: 100px;
+    height: 46px;
+    background-image: url(../../img/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    top: 0px;
+    left: 58px;
   }
 }
