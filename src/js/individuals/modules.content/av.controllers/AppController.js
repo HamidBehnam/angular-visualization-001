@@ -8,5 +8,5 @@ angular.module("av.controllers")
 function AppController() {
     var vm = this;
     vm.testField = "hamid behnam";
-    vm.links = ["link1", "link2"];
+    vm.links = ["dc", "link2"];
 }

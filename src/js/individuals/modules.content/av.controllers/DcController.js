@@ -3,9 +3,9 @@
  */
 
 angular.module("av.controllers")
-    .controller("FirstLinkController", FirstLinkController);
+    .controller("DcController", DcController);
 
-function FirstLinkController() {
+function DcController() {
     var vm = this;
     vm.testField = "this is the first controller";
 }

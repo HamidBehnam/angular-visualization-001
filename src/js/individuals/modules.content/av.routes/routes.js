@@ -6,10 +6,10 @@ angular.module("av.routes")
     .config(["$routeProvider", DefineRoutes]);
 
 function DefineRoutes($routeProvider) {
-    $routeProvider.when("/link1", {
-        templateUrl: "src/views/link1.html",
-        controller: "FirstLinkController",
-        controllerAs: "firstController"
+    $routeProvider.when("/dc", {
+        templateUrl: "src/views/dc.html",
+        controller: "DcController",
+        controllerAs: "dcController"
     }).when("/link2", {
         templateUrl: "src/views/link2.html",
         controller: "SecondLinkController",
