@@ -1,15 +1,12 @@
-.inner-right-handle {
+.inner-range-handle {
   position: absolute;
-  top: @header-height;
+  bottom: 0;
   background-color: #748290;
   color: white;
-  width: calc(~"100vh" - @header-height);
+  width: 100vw;
   height: @inner-handle-thickness;
   line-height: @inner-handle-thickness;
-  transform-origin: left top;
-  transform: rotate(90deg);
-  //TODO: see this link: http://stackoverflow.com/questions/25205039/is-it-possible-to-get-a-negative-value-with-css-calc
-  right: calc(~"-100vh" - -@header-height);
+  //right: calc(~"-100vh" - -@header-height);
   z-index: 1;
 
   li {
@@ -27,21 +24,21 @@
   }
 }
 
-.inner-right {
+.inner-range {
   padding-top: 20px;
   position: absolute;
-  top: @header-height;
-  right: @inner-handle-thickness;
+  bottom: 0;
+  //right: @inner-handle-thickness;
   background-color: #C9D3DC;
-  height: calc(~"100vh" - @header-height);
-  width: @inner-right-width;
+  height: @inner-range-height;
+  width: 100vw;
   box-shadow: 0 0 25px gray;
 
   .menu-close {
     position: absolute;
     cursor: pointer;
     top: 0;
-    left: 0;
+    right: 30px;
     color: grey;
   }
 }

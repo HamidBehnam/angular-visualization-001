@@ -3,9 +3,9 @@
  */
 
 angular.module("av.directives")
-    .directive("avOpenInnerRightMenu", avOpenInnerRightMenu);
+    .directive("avOpenInnerRight", avOpenInnerRight);
 
-function avOpenInnerRightMenu() {
+function avOpenInnerRight() {
     return {
         restrict: "A",
         link: function (scope, element, attrs) {

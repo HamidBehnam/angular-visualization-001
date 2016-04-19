@@ -3,9 +3,9 @@
  */
 
 angular.module("av.directives")
-    .directive("avCloseInnerLeftMenu", avCloseInnerLeftMenu);
+    .directive("avCloseInnerLeft", avCloseInnerLeft);
 
-function avCloseInnerLeftMenu() {
+function avCloseInnerLeft() {
     return {
         restrict: "A",
         link: function(scope, element, attrs) {
