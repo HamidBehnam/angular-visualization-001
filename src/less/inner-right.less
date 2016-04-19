@@ -1,0 +1,47 @@
+.inner-right-handle {
+  position: absolute;
+  top: @header-height;
+  background-color: #748290;
+  color: white;
+  width: calc(~"100vh" - @header-height);
+  height: @inner-handle-width;
+  line-height: @inner-handle-width;
+  transform-origin: left top;
+  transform: rotate(90deg);
+  //TODO: see this link: http://stackoverflow.com/questions/25205039/is-it-possible-to-get-a-negative-value-with-css-calc
+  right: calc(~"-100vh" - -@header-height);
+  z-index: 1;
+
+  li {
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+
+    &:hover, &.active {
+      background-color: #506171;
+    }
+  }
+
+  i {
+    font-size: smaller;
+  }
+}
+
+.inner-right {
+  padding-top: 20px;
+  position: absolute;
+  top: @header-height;
+  right: @inner-handle-width;
+  background-color: #C9D3DC;
+  height: calc(~"100vh" - @header-height);
+  width: @inner-right-width;
+  box-shadow: 0 0 25px gray;
+
+  .menu-close {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    color: grey;
+  }
+}

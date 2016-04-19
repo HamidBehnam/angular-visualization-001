@@ -1,8 +1,8 @@
 <div ng-bind="dcController.testField"></div>
 <div class="inner-left-handle">
     <ul class="list-inline pull-right">
-        <li><span data-toggle="tab" data-target="#settings">Settings</span></li>
-        <li class="active"><span data-toggle="tab" data-target="#data-source">DataSource</span></li>
+        <li av-open-inner-left-menu><span data-toggle="tab" data-target="#settings"><i class="material-icons">build</i> Settings</span></li>
+        <li av-open-inner-left-menu class="active"><span data-toggle="tab" data-target="#data-source"><i class="fa fa-cubes" aria-hidden="true"></i> DataSource</span></li>
     </ul>
 </div>
 <div class="inner-left">
@@ -14,6 +14,24 @@
             Reserved
         </div>
     </div>
+    <div av-close-inner-left-menu class="menu-close"><i class="material-icons">close</i></div>
 </div>
-<div class="inner-right">inner right</div>
+
+<div class="inner-right-handle">
+    <ul class="list-inline">
+        <li av-open-inner-right-menu class="active"><span data-toggle="tab" data-target="#filters"><i class="fa fa-filter" aria-hidden="true"></i> Filers</span></li>
+        <li av-open-inner-right-menu><span data-toggle="tab" data-target="#something"><i class="material-icons">perm_data_setting</i> Something</span></li>
+    </ul>
+</div>
+<div class="inner-right">
+    <div class="tab-content">
+        <div id="filters" class="tab-pane fade in active">
+            Filters
+        </div>
+        <div id="something" class="tab-pane fade">
+            something
+        </div>
+    </div>
+    <div av-close-inner-right-menu class="menu-close"><i class="material-icons">close</i></div>
+</div>
 <div class="inner-range">inner range</div>
