@@ -1,4 +1,8 @@
 <div ng-bind="dcController.testField"></div>
+<div ng-repeat="widgetMeta in dcController.pageMap.workSpaces">
+    <h3>hamid</h3>
+</div>
+
 <div class="inner-left-handle">
     <ul class="list-inline pull-right">
         <li av-open-inner-left><span data-toggle="tab" data-target="#settings"><i class="material-icons">build</i> Settings</span></li>
@@ -26,7 +30,9 @@
 <div class="inner-right">
     <div class="tab-content">
         <div id="filters" class="tab-pane fade in active">
-            Filters
+            <av-data-widget></av-data-widget>
+            <av-data-widget></av-data-widget>
+            <av-data-widget></av-data-widget>
         </div>
         <div id="something" class="tab-pane fade">
             something
@@ -37,8 +43,8 @@
 
 <div class="inner-range-handle">
     <ul class="list-inline">
-        <li av-open-inner-right class="active"><span data-toggle="tab" data-target="#timeline"><i class="fa fa-filter" aria-hidden="true"></i> Timeline</span></li>
-        <li av-open-inner-right><span data-toggle="tab" data-target="#range-setting"><i class="material-icons">perm_data_setting</i> Range</span></li>
+        <li av-open-inner-range class="active"><span data-toggle="tab" data-target="#timeline"><i class="fa fa-filter" aria-hidden="true"></i> Timeline</span></li>
+        <li av-open-inner-range><span data-toggle="tab" data-target="#range-setting"><i class="material-icons">perm_data_setting</i> Range</span></li>
     </ul>
 </div>
 <div class="inner-range">
