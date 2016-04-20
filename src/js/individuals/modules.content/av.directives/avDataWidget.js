@@ -8,6 +8,7 @@ angular.module("av.directives")
 function avDataWidget() {
     return {
         restrict: "E",
+        scope: {},
         templateUrl: "src/views/av-data-widget.html",
         link: function (scope, element, attrs) {
 

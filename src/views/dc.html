@@ -1,7 +1,4 @@
-<div ng-bind="dcController.testField"></div>
-<div ng-repeat="widgetMeta in dcController.pageMap.workSpaces">
-    <h3>hamid</h3>
-</div>
+<av-data-widget ng-repeat="widgetMeta in dcController.pageMap.workSpaces"></av-data-widget>
 
 <div class="inner-left-handle">
     <ul class="list-inline pull-right">
@@ -30,9 +27,7 @@
 <div class="inner-right">
     <div class="tab-content">
         <div id="filters" class="tab-pane fade in active">
-            <av-data-widget></av-data-widget>
-            <av-data-widget></av-data-widget>
-            <av-data-widget></av-data-widget>
+            <av-data-widget ng-repeat="widgetMeta in dcController.pageMap.filters"></av-data-widget>
         </div>
         <div id="something" class="tab-pane fade">
             something
@@ -50,7 +45,7 @@
 <div class="inner-range">
     <div class="tab-content">
         <div id="timeline" class="tab-pane fade in active">
-            Timeline
+            <av-data-widget ng-repeat="widgetMeta in dcController.pageMap.ranges"></av-data-widget>
         </div>
         <div id="range-setting" class="tab-pane fade">
             Range Setting
