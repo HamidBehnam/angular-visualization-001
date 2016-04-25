@@ -42,6 +42,18 @@ function DcController() {
                 {
                     "type": "lineChart",
                     "title": "Could be anything"
+                },
+                {
+                    "type": "lineChart",
+                    "title": "Could be anything"
+                },
+                {
+                    "type": "lineChart",
+                    "title": "Could be anything"
+                },
+                {
+                    "type": "lineChart",
+                    "title": "Could be anything"
                 }
             ],
             ranges: [

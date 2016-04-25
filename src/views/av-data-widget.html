@@ -1,6 +1,6 @@
-<div class="widget-holder">
-    <div class="widget-header">header</div>
-    <div class="widget-content">
+<div class="widget-holder" ng-class="{'{{widgetType}}': true}">
+    <div class="widget-header" ng-bind="widgetMetaData.title"></div>
+    <div class="widget-content" ng-attr-id="{{widgetType + '-' + widgetIndex}}">
         <div ng-bind="dcController.testField"></div>
     </div>
 </div>

@@ -1,9 +1,15 @@
-<av-data-widget ng-repeat="widgetMeta in dcController.pageMap.workSpaces"></av-data-widget>
+<div class="work-space-area">
+    <av-data-widget ng-repeat="widgetMeta in dcController.pageMap.workSpaces" widget-meta-data="widgetMeta"
+                    widget-type="work-space" widget-index="$index"></av-data-widget>
+</div>
 
 <div class="inner-left-handle">
     <ul class="list-inline pull-right">
-        <li av-open-inner-left><span data-toggle="tab" data-target="#settings"><i class="material-icons">build</i> Settings</span></li>
-        <li av-open-inner-left class="active"><span data-toggle="tab" data-target="#data-source"><i class="fa fa-cubes" aria-hidden="true"></i> DataSource</span></li>
+        <li av-open-inner-left><span data-toggle="tab" data-target="#settings"><i class="material-icons">build</i> Settings</span>
+        </li>
+        <li av-open-inner-left class="active"><span data-toggle="tab" data-target="#data-source"><i class="fa fa-cubes"
+                                                                                                    aria-hidden="true"></i> DataSource</span>
+        </li>
     </ul>
 </div>
 <div class="inner-left">
@@ -20,14 +26,18 @@
 
 <div class="inner-right-handle">
     <ul class="list-inline">
-        <li av-open-inner-right class="active"><span data-toggle="tab" data-target="#filters"><i class="fa fa-filter" aria-hidden="true"></i> Filers</span></li>
-        <li av-open-inner-right><span data-toggle="tab" data-target="#something"><i class="material-icons">perm_data_setting</i> Something</span></li>
+        <li av-open-inner-right class="active"><span data-toggle="tab" data-target="#filters"><i class="fa fa-filter"
+                                                                                                 aria-hidden="true"></i> Filers</span>
+        </li>
+        <li av-open-inner-right><span data-toggle="tab" data-target="#something"><i class="material-icons">perm_data_setting</i> Something</span>
+        </li>
     </ul>
 </div>
 <div class="inner-right">
     <div class="tab-content">
         <div id="filters" class="tab-pane fade in active">
-            <av-data-widget ng-repeat="widgetMeta in dcController.pageMap.filters"></av-data-widget>
+            <av-data-widget ng-repeat="widgetMeta in dcController.pageMap.filters" widget-meta-data="widgetMeta"
+                            widget-type="filter" widget-index="$index"></av-data-widget>
         </div>
         <div id="something" class="tab-pane fade">
             something
@@ -38,14 +48,18 @@
 
 <div class="inner-range-handle">
     <ul class="list-inline">
-        <li av-open-inner-range class="active"><span data-toggle="tab" data-target="#timeline"><i class="fa fa-filter" aria-hidden="true"></i> Timeline</span></li>
-        <li av-open-inner-range><span data-toggle="tab" data-target="#range-setting"><i class="material-icons">perm_data_setting</i> Range</span></li>
+        <li av-open-inner-range class="active"><span data-toggle="tab" data-target="#timeline"><i class="fa fa-filter"
+                                                                                                  aria-hidden="true"></i> Timeline</span>
+        </li>
+        <li av-open-inner-range><span data-toggle="tab" data-target="#range-setting"><i class="material-icons">perm_data_setting</i> Range</span>
+        </li>
     </ul>
 </div>
 <div class="inner-range">
     <div class="tab-content">
         <div id="timeline" class="tab-pane fade in active">
-            <av-data-widget ng-repeat="widgetMeta in dcController.pageMap.ranges"></av-data-widget>
+            <av-data-widget ng-repeat="widgetMeta in dcController.pageMap.ranges" widget-meta-data="widgetMeta"
+                            widget-type="range" widget-index="$index"></av-data-widget>
         </div>
         <div id="range-setting" class="tab-pane fade">
             Range Setting

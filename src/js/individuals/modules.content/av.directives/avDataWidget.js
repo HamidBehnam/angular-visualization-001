@@ -8,7 +8,11 @@ angular.module("av.directives")
 function avDataWidget() {
     return {
         restrict: "E",
-        scope: {},
+        scope: {
+            widgetMetaData: "=",
+            widgetType: "@",
+            widgetIndex: "="
+        },
         templateUrl: "src/views/av-data-widget.html",
         link: function (scope, element, attrs) {
 
