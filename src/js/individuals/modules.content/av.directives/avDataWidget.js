@@ -15,7 +15,16 @@ function avDataWidget() {
         },
         templateUrl: "src/views/av-data-widget.html",
         link: function (scope, element, attrs) {
-
+            scope.getIconClass = function (type) {
+                switch (type) {
+                    case "filter":
+                        return "fa-pie-chart";
+                    case "work-space":
+                        return "fa-line-chart";
+                    case "range":
+                        return "fa-clock-o";
+                }
+            };
         }
     };
 }

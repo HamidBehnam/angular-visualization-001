@@ -1,5 +1,8 @@
 <div class="widget-holder" ng-class="{'{{widgetType}}': true}">
-    <div class="widget-header" ng-bind="widgetMetaData.title"></div>
+    <div class="widget-header">
+        <span class="widget-icon"><i class="fa" ng-class="getIconClass(widgetType)" aria-hidden="true"></i></span>
+        <span class="widget-title" ng-bind="widgetMetaData.title"></span>
+    </div>
     <div class="widget-content" ng-attr-id="{{widgetType + '-' + widgetIndex}}">
         <div ng-bind="dcController.testField"></div>
     </div>
