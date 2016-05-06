@@ -11,7 +11,8 @@ function avDataWidget() {
         scope: {
             widgetMetaData: "=",
             widgetType: "@",
-            widgetIndex: "="
+            widgetIndex: "=",
+            pageTypeMap: "="
         },
         templateUrl: "src/views/av-data-widget.html",
         controller: "DataWidgetController",

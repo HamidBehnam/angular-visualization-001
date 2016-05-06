@@ -20,5 +20,7 @@ function DataWidgetController($scope, $element, $attrs) {
     };
 
     vm.resetFilter = function () {
+        $scope.pageTypeMap[$scope.widgetMetaData.type].dcObject.filterAll();
+        dc.redrawAll();
     };
 }
