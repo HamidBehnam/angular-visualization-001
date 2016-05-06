@@ -14,17 +14,10 @@ function avDataWidget() {
             widgetIndex: "="
         },
         templateUrl: "src/views/av-data-widget.html",
+        controller: "DataWidgetController",
+        controllerAs: "widgetController",
         link: function (scope, element, attrs) {
-            scope.getIconClass = function (type) {
-                switch (type) {
-                    case "filter":
-                        return "fa-pie-chart";
-                    case "work-space":
-                        return "fa-line-chart";
-                    case "range":
-                        return "fa-clock-o";
-                }
-            };
+
         }
     };
 }
