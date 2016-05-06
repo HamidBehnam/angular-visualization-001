@@ -12,6 +12,8 @@ function avVisualizationProcessor($timeout) {
             pageData: "="
         },
         link: function (scope, element, attrs) {
+            var innerRightWidth = $(element).find(".inner-right").width();
+            $(element).closest(".content").css("margin-right", innerRightWidth);
             var pageController = angular.element(element).scope().dcController; /*ko.dataFor($(element)[0])*/
             $timeout(function () {
                 var idTypeHash = {};
@@ -225,7 +227,7 @@ function avVisualizationProcessor($timeout) {
                         }
 
                         function bubbleChartBuilder(dcObject) {
-                            dcObject.width(window.innerWidth - 20) // (optional) define chart width, :default = 200
+                            dcObject.width(window.innerWidth - innerRightWidth) // (optional) define chart width, :default = 200
                                 .height(250)  // (optional) define chart height, :default = 200
                                 .transitionDuration(1500) // (optional) define chart transition duration, :default = 750
                                 .margins({top: 10, right: 50, bottom: 30, left: 40})
@@ -296,7 +298,7 @@ function avVisualizationProcessor($timeout) {
                         }
 
                         function workBarChartBuilder(dcObject) {
-                            dcObject.width(window.innerWidth - 20)
+                            dcObject.width(window.innerWidth - innerRightWidth)
                                 .height(180)
                                 .margins({top: 10, right: 50, bottom: 30, left: 40})
                                 .dimension(fluctuation)
@@ -328,7 +330,7 @@ function avVisualizationProcessor($timeout) {
 
                         function lineChartBuilder(dcObject, dependencyType, typeMap) {
                             dcObject.renderArea(true)
-                                .width(window.innerWidth - 20)
+                                .width(window.innerWidth - innerRightWidth)
                                 .height(200)
                                 .transitionDuration(1000)
                                 .margins({top: 30, right: 50, bottom: 25, left: 40})
