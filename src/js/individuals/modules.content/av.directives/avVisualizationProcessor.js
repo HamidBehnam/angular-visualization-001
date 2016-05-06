@@ -8,6 +8,9 @@ angular.module("av.directives")
 function avVisualizationProcessor($timeout) {
     return {
         restrict: "A",
+        scope: {
+            pageData: "="
+        },
         link: function (scope, element, attrs) {
             var pageController = angular.element(element).scope().dcController; /*ko.dataFor($(element)[0])*/
             $timeout(function () {
@@ -18,7 +21,7 @@ function avVisualizationProcessor($timeout) {
 
                 //******************
 
-                scope.$watch("dcController.pageData", function (newValue, oldValue) {
+                scope.$watch("pageData", function (newValue, oldValue) {
                     if (!newValue.length) {
                         return;
                     }
