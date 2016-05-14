@@ -14,8 +14,11 @@ function avVisualizationProcessor($timeout) {
         link: function (scope, element, attrs) {
             var innerRightWidth = $(element).find(".inner-right").width();
             var innerLeftWidth = $(element).find(".inner-left").width();
-            $(element).closest(".content").css("margin-right", innerRightWidth);
-            $(element).closest(".content").css("margin-left", innerLeftWidth);
+            var contentElement = $(element).closest(".content");
+            var rangeElement = contentElement.find(".inner-range");
+            contentElement.css("margin-right", innerRightWidth);
+            contentElement.css("margin-left", innerLeftWidth);
+            rangeElement.width(contentElement.width() - 10);
             var pageController = angular.element(element).scope().dcController; /*ko.dataFor($(element)[0])*/
             $timeout(function () {
                 var idTypeHash = {};
@@ -370,9 +373,9 @@ function avVisualizationProcessor($timeout) {
                         }
 
                         function rangeBarChartBuilder(dcObject) {
-                            dcObject.width(window.innerWidth - 20)
+                            dcObject.width(window.innerWidth - innerRightWidth - innerLeftWidth)
                                 .height(40)
-                                .margins({top: 0, right: 50, bottom: 20, left: 40})
+                                .margins({top: 0, right: 60, bottom: 20, left: 40})
                                 .dimension(moveMonths)
                                 .group(volumeByMonthGroup)
                                 .centerBar(true)
