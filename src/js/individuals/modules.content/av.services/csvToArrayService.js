@@ -1,4 +1,7 @@
 /**
+ * Thanks to sturtevant, I've used his code for this Service
+ * Source: http://jsfiddle.net/sturtevant/AZFvQ/
+ *
  * Created by hamidbehnam on 4/29/16.
  */
 
