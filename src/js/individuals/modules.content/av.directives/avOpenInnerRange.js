@@ -11,9 +11,8 @@ function avOpenInnerRange() {
         link: function (scope, element, attrs) {
             $(element).on("click", function (event) {
                 var innerRangeElement = $(event.target).closest(".inner-range-handle").next();
-                if (+ innerRangeElement.css("bottom").slice(0, -2) < 0) {
-                    var innerRangeMenuHeight = innerRangeElement.innerHeight();
-                    innerRangeElement.animate({bottom: "+=".concat(innerRangeMenuHeight, "px")});
+                if (innerRangeElement.css("display") === "none") {
+                    innerRangeElement.toggle("slide", {direction: "down"});
                 }
             });
         }

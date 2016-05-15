@@ -10,9 +10,10 @@ function avCloseInnerRange() {
         restrict: "A",
         link: function (scope, element, attrs) {
             $(element).on("click", function (event) {
-                var innerRangeHeight = $(event.target).closest(".inner-range").innerHeight();
-                $(event.target).closest(".inner-range").animate({bottom: "-=".concat(innerRangeHeight, "px")});
-                $(event.target).closest(".inner-range").prev().find("li").each(function (index, element) { $(this).removeClass("active");});
+                var contentElement = $(".av-body").find(".content");
+                var innerRangeElement = $(event.target).closest(".inner-range");
+                innerRangeElement.toggle("slide", {direction: "down"});
+                contentElement.find(".inner-range-handle").find("li").each(function (index, element) { $(this).removeClass("active");});
             });
         }
     };

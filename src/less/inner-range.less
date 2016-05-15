@@ -25,7 +25,10 @@
 }
 
 .inner-range {
-  padding-top: 20px;
+  //padding-top: 20px commented because some sort of jumping problems during the toggle instead of that margin-top: 20px was added for .tab-content class down blow.
+  //padding-top: 20px;
+  //overflow: hidden was added to fix the jumping problem during the toggle link: http://stackoverflow.com/questions/2327952/slidetoggle-height-is-jumping
+  overflow: hidden;
   position: absolute;
   bottom: @inner-handle-thickness;
   //right: @inner-handle-thickness;
@@ -34,6 +37,10 @@
   //width: 100vw;
   margin-left: 5px;
   box-shadow: 0 0 5px @inner-window-shadow-color;
+
+  .tab-content {
+    margin-top: 20px;
+  }
 
   .menu-close {
     position: absolute;
