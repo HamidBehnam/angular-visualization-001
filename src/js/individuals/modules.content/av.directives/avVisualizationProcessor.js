@@ -12,10 +12,12 @@ function avVisualizationProcessor($timeout) {
             pageData: "="
         },
         link: function (scope, element, attrs) {
-            var innerRightWidth = $(element).find(".inner-right").width();
-            var innerLeftWidth = $(element).find(".inner-left").width();
             var contentElement = $(element).closest(".content");
+            var innerLeftElement = contentElement.find(".inner-left");
+            var innerRightElement = contentElement.find(".inner-right");
             var rangeElement = contentElement.find(".inner-range");
+            var innerLeftWidth = innerLeftElement.width();
+            var innerRightWidth = innerRightElement.width();
             contentElement.css("margin-right", innerRightWidth);
             contentElement.css("margin-left", innerLeftWidth);
             rangeElement.width(contentElement.width() - 10);
@@ -512,24 +514,48 @@ function avVisualizationProcessor($timeout) {
                         //simply call renderAll() to render all charts on the page
                         dc.renderAll();
 
-                        window.onresize = function () {
+                        //Overriding the event is not a good Idea: http://stackoverflow.com/questions/641857/javascript-window-resize-event
+                        //window.onresize = function () {
+                        //    pageController.typeMap.workBarChart.dcObject
+                        //        .width(window.innerWidth)
+                        //        .rescale()
+                        //        .redraw();
+                        //    pageController.typeMap.lineChart.dcObject
+                        //        .width(window.innerWidth)
+                        //        .rescale()
+                        //        .redraw();
+                        //    pageController.typeMap.bubbleChart.dcObject
+                        //        .width(window.innerWidth)
+                        //        .rescale()
+                        //        .redraw();
+                        //    pageController.typeMap.rangeBarChart.dcObject
+                        //        .width(window.innerWidth)
+                        //        .rescale()
+                        //        .redraw();
+                        //};
+
+                        $(window).resize(function (event) {
+                            var reducedForLeftInnerMenu = innerLeftElement.css("display") === "none" ? 0 : innerLeftElement.width();
+                            var reducedForRightInnerMenu = innerRightElement.css("display") === "none" ? 0 : innerRightElement.width();
+                            rangeElement.width(contentElement.width() - 10);
                             pageController.typeMap.workBarChart.dcObject
-                                .width(window.innerWidth)
+                                .width(window.innerWidth - reducedForLeftInnerMenu - reducedForRightInnerMenu)
                                 .rescale()
                                 .redraw();
                             pageController.typeMap.lineChart.dcObject
-                                .width(window.innerWidth)
+                                .width(window.innerWidth - reducedForLeftInnerMenu - reducedForRightInnerMenu)
                                 .rescale()
                                 .redraw();
                             pageController.typeMap.bubbleChart.dcObject
-                                .width(window.innerWidth)
+                                .width(window.innerWidth - reducedForLeftInnerMenu - reducedForRightInnerMenu)
                                 .rescale()
                                 .redraw();
                             pageController.typeMap.rangeBarChart.dcObject
-                                .width(window.innerWidth)
+                                .width(window.innerWidth - reducedForLeftInnerMenu - reducedForRightInnerMenu)
                                 .rescale()
                                 .redraw();
-                        };
+                        });
+
                     })(newValue, idTypeHash);
 //#### Versions
 //Determine the current version of dc with `dc.version`
