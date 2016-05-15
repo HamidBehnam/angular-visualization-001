@@ -17,52 +17,9 @@ function DcController($http, csvToJSONService) {
     };
 
     vm.getPageMap = function () {
-        var resultObject = {
-            filters: [
-                {
-                    "type": "fullPieChart",
-                    "title": "Data Filter 1"
-                },
-                {
-                    "type": "partialPieChart",
-                    "title": "Data Filter 2"
-                },
-                {
-                    "type": "rowChart",
-                    "title": "Data Filter 3"
-                }
-            ],
-            workSpaces: [
-                {
-                    "type": "bubbleChart",
-                    "title": "Hamid"
-                },
-                {
-                    "type": "workBarChart",
-                    "title": "Behnam"
-                },
-                {
-                    "type": "lineChart",
-                    "title": "Could be anything"
-                }
-            ],
-            ranges: [
-                {
-                    "type": "rangeBarChart",
-                    "title": "Range Component"
-                }
-            ],
-            leftPanelDesign: {
-                "title": "Left Title",
-                "info": "Left Info"
-            },
-            rightPanelDesign: {
-                "title": "Right Title",
-                "info": "Right Info"
-            }
-        };
-
-        vm.pageMap = resultObject;
+        $http.get("json/pageMap.json").then(function (response) {
+            vm.pageMap = response.data;
+        });
     };
 
     vm.getPageData = function () {

@@ -18,7 +18,7 @@ function avDataWidget() {
         controller: "DataWidgetController",
         controllerAs: "widgetController",
         link: function (scope, element, attrs) {
-
+            $(element).find(".widget-content").height(scope.widgetMetaData.height);
         }
     };
 }

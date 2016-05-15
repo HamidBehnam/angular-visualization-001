@@ -212,6 +212,14 @@ body.av-body .widget-holder.filter .dc-chart {
 .widget-holder .widget-header .widget-title {
   padding-left: 25px;
 }
+.widget-holder .widget-content {
+  height: 0;
+  -webkit-transition: 500ms;
+  -moz-transition: 500ms;
+  -ms-transition: 500ms;
+  -o-transition: 500ms;
+  transition: 500ms;
+}
 .widget-holder .widget-content .widget-reset-button {
   position: absolute;
   top: 4px;

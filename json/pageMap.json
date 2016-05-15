@@ -1,0 +1,51 @@
+{
+  "filters": [
+    {
+      "type": "fullPieChart",
+      "title": "Data Filter 1",
+      "height": 180
+    },
+    {
+      "type": "partialPieChart",
+      "title": "Data Filter 2",
+      "height": 180
+    },
+    {
+      "type": "rowChart",
+      "title": "Data Filter 3",
+      "height": 180
+    }
+  ],
+  "workSpaces": [
+    {
+      "type": "bubbleChart",
+      "title": "Hamid",
+      "height": 250
+    },
+    {
+      "type": "workBarChart",
+      "title": "Behnam",
+      "height": 180
+    },
+    {
+      "type": "lineChart",
+      "title": "Could be anything",
+      "height": 200
+    }
+  ],
+  "ranges": [
+    {
+      "type": "rangeBarChart",
+      "title": "Range Component",
+      "height": 40
+    }
+  ],
+  "leftPanelDesign": {
+    "title": "Left Title",
+    "info": "Left Info"
+  },
+  "rightPanelDesign": {
+    "title": "Right Title",
+    "info": "Right Info"
+  }
+}
