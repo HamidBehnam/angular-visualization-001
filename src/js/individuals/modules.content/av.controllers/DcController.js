@@ -12,7 +12,7 @@ function DcController($http, csvToJSONService) {
     vm.typeMap = {};
     vm.pageData = [];
 
-    vm.Load = function () {
+    vm.load = function () {
         vm.getPageMap();
     };
 
@@ -29,5 +29,5 @@ function DcController($http, csvToJSONService) {
         });
     };
 
-    vm.Load();
+    vm.load();
 }

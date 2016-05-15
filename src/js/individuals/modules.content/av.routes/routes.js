@@ -17,9 +17,9 @@ function DefineRoutes($routeProvider) {
             controller: "DcController",
             controllerAs: "dcController"
         })
-        .when("/link2", {
-            templateUrl: "src/views/link2.html",
-            controller: "SecondLinkController",
-            controllerAs: "secondController"
+        .when("/dashboard", {
+            templateUrl: "src/views/dashboard.html",
+            controller: "DashboardController",
+            controllerAs: "dashboardController"
         });
 }

@@ -3,10 +3,22 @@
  */
 
 angular.module("av.controllers")
-    .controller("AppController", AppController);
+    .controller("AppController", ["$http", AppController]);
 
-function AppController() {
+function AppController($http) {
     var vm = this;
-    vm.testField = "hamid behnam";
-    vm.links = ["dc", "link2"];
+    vm.links = [];
+
+    vm.load = function() {
+        vm.getLeftMenuItems();
+    };
+
+    vm.getLeftMenuItems = function () {
+        $http.get("json/mainLeftMenuItems.json").then(function (response) {
+            vm.links = response.data;
+        });
+    };
+
+    vm.load();
 }
+

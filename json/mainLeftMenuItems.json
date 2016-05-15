@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Visualization Show Case",
+    "viewKey": "dc",
+    "icon-class": "fa-cube"
+  },
+  {
+    "title": "Dashboard",
+    "viewKey": "dashboard",
+    "icon-class": "fa-tachometer"
+  }
+]

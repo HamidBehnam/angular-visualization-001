@@ -32,12 +32,36 @@ angular.module("av.services", []);
  */
 
 angular.module("av.controllers")
-    .controller("AppController", AppController);
+    .controller("AppController", ["$http", AppController]);
 
-function AppController() {
+function AppController($http) {
     var vm = this;
-    vm.testField = "hamid behnam";
-    vm.links = ["dc", "link2"];
+    vm.links = [];
+
+    vm.load = function() {
+        vm.getLeftMenuItems();
+    };
+
+    vm.getLeftMenuItems = function () {
+        $http.get("json/mainLeftMenuItems.json").then(function (response) {
+            vm.links = response.data;
+        });
+    };
+
+    vm.load();
+}
+
+
+/**
+ * Created by hamidbehnam on 4/4/16.
+ */
+
+angular.module("av.controllers")
+    .controller("DashboardController", DashboardController);
+
+function DashboardController() {
+    var vm = this;
+    vm.welcomeMessage = "Dashboard controller.";
 }
 
 /**
@@ -81,7 +105,7 @@ function DcController($http, csvToJSONService) {
     vm.typeMap = {};
     vm.pageData = [];
 
-    vm.Load = function () {
+    vm.load = function () {
         vm.getPageMap();
     };
 
@@ -98,19 +122,7 @@ function DcController($http, csvToJSONService) {
         });
     };
 
-    vm.Load();
-}
-
-/**
- * Created by hamidbehnam on 4/4/16.
- */
-
-angular.module("av.controllers")
-    .controller("SecondLinkController", SecondLinkController);
-
-function SecondLinkController() {
-    var vm = this;
-    vm.testField = "this is the second controller";
+    vm.load();
 }
 
 /**
@@ -922,10 +934,10 @@ function DefineRoutes($routeProvider) {
             controller: "DcController",
             controllerAs: "dcController"
         })
-        .when("/link2", {
-            templateUrl: "src/views/link2.html",
-            controller: "SecondLinkController",
-            controllerAs: "secondController"
+        .when("/dashboard", {
+            templateUrl: "src/views/dashboard.html",
+            controller: "DashboardController",
+            controllerAs: "dashboardController"
         });
 }
 

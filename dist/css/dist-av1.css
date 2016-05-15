@@ -64,6 +64,16 @@ body.av-body .widget-holder.filter .dc-chart {
 }
 .left-menu a {
   color: white;
+  width: 100%;
+  display: inline-block;
+  padding: 10px;
+}
+.left-menu a:hover {
+  background-color: #586675;
+  text-decoration: none;
+}
+.left-menu a .left-menu-item-text {
+  padding-left: 10px;
 }
 .inner-left-handle {
   position: absolute;
