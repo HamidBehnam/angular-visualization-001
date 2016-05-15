@@ -1,8 +1,8 @@
 <div class="left-menu">
     <ul class="list-unstyled">
         <li ng-repeat="link in appController.links">
-            <a av-collapse-main-left-menu ng-href="{{'#/' + link.viewKey}}">
-                <span><i class="fa" ng-class="link['icon-class']" aria-hidden="true"></i></span>
+            <a av-collapse-main-left-menu ng-href="{{link.url || '#/' + link.viewKey}}" ng-attr-target="{{link.newWindow ? '_blank' : '_self'}}">
+                <span><i class="fa" ng-class="link.iconClass" aria-hidden="true"></i></span>
                 <span ng-bind="link.title" class="left-menu-item-text"></span>
             </a>
         </li>

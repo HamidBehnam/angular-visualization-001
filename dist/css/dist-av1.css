@@ -25,8 +25,17 @@ body.av-body .widget-holder.filter .dc-chart {
 .av-header .header-icons li {
   padding-left: 20px;
 }
+.av-header .header-icons li a {
+  color: white;
+}
 .av-header .header-icons li i {
   cursor: pointer;
+}
+.av-header .header-icons .disabled-item a {
+  color: darkgray;
+}
+.av-header .header-icons .disabled-item i {
+  cursor: not-allowed;
 }
 .av-header .main-left-opener {
   -webkit-transition: -webkit-transform ease-in-out 500ms 0ms;

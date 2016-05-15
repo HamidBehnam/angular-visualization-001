@@ -2,11 +2,25 @@
   {
     "title": "Visualization Show Case",
     "viewKey": "dc",
-    "icon-class": "fa-cube"
+    "iconClass": "fa-cube"
   },
   {
     "title": "Dashboard",
     "viewKey": "dashboard",
-    "icon-class": "fa-tachometer"
+    "iconClass": "fa-tachometer"
+  },
+  {
+    "title": "Source",
+    "viewKey": "source",
+    "iconClass": "fa-code",
+    "url": "https://github.com/HamidBehnam/angular-visualization-001",
+    "newWindow": true
+  },
+  {
+    "title": "Download",
+    "viewKey": "download",
+    "iconClass": "fa-download",
+    "url": "https://github.com/HamidBehnam/angular-visualization-001/archive/master.zip",
+    "newWindow": false
   }
 ]
