@@ -305,6 +305,7 @@ function avVisualizationProcessor($timeout) {
                         function workBarChartBuilder(dcObject) {
                             dcObject.width(window.innerWidth - innerRightWidth - innerLeftWidth)
                                 .height(180)
+                                .transitionDuration(1500)
                                 .margins({top: 10, right: 50, bottom: 30, left: 40})
                                 .dimension(fluctuation)
                                 .group(fluctuationGroup)
@@ -337,7 +338,7 @@ function avVisualizationProcessor($timeout) {
                             dcObject.renderArea(true)
                                 .width(window.innerWidth - innerRightWidth - innerLeftWidth)
                                 .height(200)
-                                .transitionDuration(1000)
+                                .transitionDuration(1500)
                                 .margins({top: 30, right: 50, bottom: 25, left: 40})
                                 .dimension(moveMonths)
                                 .mouseZoomable(true)
@@ -375,6 +376,7 @@ function avVisualizationProcessor($timeout) {
                         function rangeBarChartBuilder(dcObject) {
                             dcObject.width(window.innerWidth - innerRightWidth - innerLeftWidth)
                                 .height(40)
+                                .transitionDuration(1500)
                                 .margins({top: 0, right: 60, bottom: 20, left: 40})
                                 .dimension(moveMonths)
                                 .group(volumeByMonthGroup)

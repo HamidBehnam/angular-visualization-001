@@ -21,15 +21,15 @@ function DcController($http, csvToJSONService) {
             filters: [
                 {
                     "type": "fullPieChart",
-                    "title": "Days by Gain/Loss"
+                    "title": "Data Filter 1"
                 },
                 {
                     "type": "partialPieChart",
-                    "title": "Quarters"
+                    "title": "Data Filter 2"
                 },
                 {
                     "type": "rowChart",
-                    "title": "Day of Week"
+                    "title": "Data Filter 3"
                 }
             ],
             workSpaces: [

@@ -10,18 +10,18 @@ function avOpenInnerRight(dcRedrawService) {
         restrict: "A",
         link: function (scope, element, attrs) {
             $(element).on("click", function (event) {
-                var innerRightElement = $(event.target).closest(".inner-right-handle").next();
-                var innerLeftElement = $(".av-body").find(".inner-left");
+                var contentElement = $(".av-body").find(".content");
+                var innerRightElement = contentElement.find(".inner-right");
+                var innerLeftElement = contentElement.find(".inner-left");
+                var innerRangeElement = contentElement.find(".inner-range");
                 var reducedWidthForLeft = innerLeftElement.css("display") === "none" ? 0 : innerLeftElement.width();
                 var innerRightMenuWidth = innerRightElement.width();
-                //if (+ innerRightElement.css("right").slice(0, -2) < 0) {
-                //    innerRightElement.animate({right: "+=".concat(innerRightMenuWidth, "px")});
-                //}
 
                 innerRightElement.closest(".content").animate({"margin-right": innerRightMenuWidth});
                 dcRedrawService.reDrawCharts(["bubbleChart", "workBarChart", "lineChart", "rangeBarChart"], scope.dcController.typeMap, innerRightMenuWidth + reducedWidthForLeft);
                 if (innerRightElement.css("display") === "none") {
-                    innerRightElement.toggle('slide', { direction : 'right'});
+                    innerRightElement.toggle('slide', {direction: 'right'});
+                    innerRangeElement.animate({"width": "-=".concat(innerRightElement.width())});
                 }
             });
         }

@@ -10,10 +10,11 @@ function avCloseInnerRight(dcRedrawService) {
         restrict: "A",
         link: function(scope, element, attrs) {
             $(element).on("click", function (event) {
-                //var innerRightMenuWidth = $(event.target).closest(".inner-right").width();
-                //innerRightElement.animate({right: "-=".concat(innerRightMenuWidth, "px")});
-                var innerRightElement = $(event.target).closest(".inner-right");
-                var innerLeftElement = $(".av-body").find(".inner-left");
+                var contentElement = $(".av-body").find(".content");
+                var innerRightElement = contentElement.find(".inner-right");
+                var innerLeftElement = contentElement.find(".inner-left");
+                var innerRangeElement = contentElement.find(".inner-range");
+                innerRangeElement.animate({"width": "+=".concat(innerRightElement.width())});
                 var reducedWidth = innerLeftElement.css("display") === "none" ? 0 : innerLeftElement.width();
                 innerRightElement.closest(".content").animate({"margin-right": 0});
                 dcRedrawService.reDrawCharts(["bubbleChart", "workBarChart", "lineChart", "rangeBarChart"], scope.dcController.typeMap, reducedWidth);

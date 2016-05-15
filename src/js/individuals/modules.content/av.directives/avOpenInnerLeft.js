@@ -10,18 +10,18 @@ function avOpenInnerLeft(dcRedrawService) {
         restrict: "A",
         link: function (scope, element, attrs) {
             $(element).on("click", function (event) {
-                var innerLeftElement = $(event.target).closest(".inner-left-handle").next();
+                var contentElement = $(".av-body").find(".content");
+                var innerLeftElement = contentElement.find(".inner-left");
+                var innerRightElement = contentElement.find(".inner-right");
+                var innerRangeElement = contentElement.find(".inner-range");
                 var innerLeftMenuWidth = innerLeftElement.width();
-                var innerRightElement = $(".av-body").find(".inner-right");
                 var reducedWidthForRight = innerRightElement.css("display") === "none" ? 0 : innerRightElement.width();
-                //if (+ innerLeftElement.css("left").slice(0, -2) < 0) {
-                //    innerLeftElement.animate({left: "+=".concat(innerLeftMenuWidth, "px")});
-                //}
 
                 innerLeftElement.closest(".content").animate({"margin-left": innerLeftMenuWidth});
                 dcRedrawService.reDrawCharts(["bubbleChart", "workBarChart", "lineChart", "rangeBarChart"], scope.dcController.typeMap, innerLeftMenuWidth + reducedWidthForRight);
                 if (innerLeftElement.css("display") === "none") {
                     innerLeftElement.toggle('slide');
+                    innerRangeElement.animate({"width": "-=".concat(innerLeftElement.width())});
                 }
             });
         }

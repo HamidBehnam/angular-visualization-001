@@ -8,18 +8,24 @@
         <ul class="list-inline pull-right">
             <li av-open-inner-left><span data-toggle="tab" data-target="#settings"><i class="material-icons">build</i> Settings</span>
             </li>
-            <li av-open-inner-left class="active"><span data-toggle="tab" data-target="#data-source"><i class="fa fa-cubes"
+            <li av-open-inner-left class="active"><span data-toggle="tab" data-target="#datasource"><i class="fa fa-cubes"
                                                                                                         aria-hidden="true"></i> DataSource</span>
             </li>
         </ul>
     </div>
     <div class="inner-left">
         <div class="tab-content">
-            <div id="data-source" class="tab-pane fade in active">
-                Inner Left
+            <div id="datasource" class="tab-pane fade in active">
+                <div class="datasource-holder text-center">
+                    <h4>DataSource Section</h4>
+                    <h5>Coming Soon!</h5>
+                </div>
             </div>
             <div id="settings" class="tab-pane fade">
-                Reserved
+                <div class="settings-holder text-center">
+                    <h4>Settings</h4>
+                    <h5>Coming Soon!</h5>
+                </div>
             </div>
         </div>
         <div av-close-inner-left class="menu-close"><i class="material-icons">close</i></div>
@@ -30,7 +36,7 @@
             <li av-open-inner-right class="active"><span data-toggle="tab" data-target="#filters"><i class="fa fa-filter"
                                                                                                      aria-hidden="true"></i> Filers</span>
             </li>
-            <li av-open-inner-right><span data-toggle="tab" data-target="#something"><i class="material-icons">perm_data_setting</i> Something</span>
+            <li av-open-inner-right><span data-toggle="tab" data-target="#controllers"><i class="material-icons">perm_data_setting</i> Controllers</span>
             </li>
         </ul>
     </div>
@@ -40,8 +46,11 @@
                 <av-data-widget ng-repeat="widgetMeta in dcController.pageMap.filters" widget-meta-data="widgetMeta"
                                 widget-type="filter" widget-index="$index" page-type-map="dcController.typeMap"></av-data-widget>
             </div>
-            <div id="something" class="tab-pane fade">
-                something
+            <div id="controllers" class="tab-pane fade">
+                <div class="controllers-holder text-center">
+                    <h4>Controllers</h4>
+                    <h5>Coming Soon!</h5>
+                </div>
             </div>
         </div>
         <div av-close-inner-right class="menu-close"><i class="material-icons">close</i></div>
@@ -52,7 +61,7 @@
             <li av-open-inner-range class="active"><span data-toggle="tab" data-target="#timeline"><i class="fa fa-filter"
                                                                                                       aria-hidden="true"></i> Timeline</span>
             </li>
-            <li av-open-inner-range><span data-toggle="tab" data-target="#range-setting"><i class="material-icons">perm_data_setting</i> Range</span>
+            <li av-open-inner-range><span data-toggle="tab" data-target="#dynamic-injectors"><i class="material-icons">perm_data_setting</i> Dynamic Injectors</span>
             </li>
         </ul>
     </div>
@@ -62,8 +71,11 @@
                 <av-data-widget ng-repeat="widgetMeta in dcController.pageMap.ranges" widget-meta-data="widgetMeta"
                                 widget-type="range" widget-index="$index" page-type-map="dcController.typeMap"></av-data-widget>
             </div>
-            <div id="range-setting" class="tab-pane fade">
-                Range Setting
+            <div id="dynamic-injectors" class="tab-pane fade">
+                <div class="dynamic-injectors-holder text-center">
+                    <h4>Dynamic Injectors</h4>
+                    <h5>Coming Soon!</h5>
+                </div>
             </div>
         </div>
         <div av-close-inner-range class="menu-close"><i class="material-icons">close</i></div>

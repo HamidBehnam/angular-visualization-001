@@ -33,9 +33,11 @@
   top: @header-height;
   right: @inner-handle-thickness;
   background-color: #F5F5F5;
-  height: calc(~"100vh" - @header-height);
+  //height: calc(~"100vh" - @header-height);
+  height: 100vh;
   width: @inner-right-width;
   box-shadow: 0 0 5px @inner-window-shadow-color;
+  z-index: 2;
 
   .menu-close {
     position: absolute;
