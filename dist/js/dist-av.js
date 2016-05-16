@@ -86,7 +86,14 @@ function DataWidgetController($scope, $element, $attrs) {
     };
 
     vm.resetFilter = function () {
-        $scope.pageTypeMap[$scope.widgetMetaData.type].dcObject.filterAll();
+        var typeUtility = $scope.pageTypeMap[$scope.widgetMetaData.type];
+
+        if (typeUtility.dependency) {
+            var typeUtilityDependency = $scope.pageTypeMap[typeUtility.dependency];
+            typeUtilityDependency.dcObject.filterAll();
+        }
+
+        typeUtility.dcObject.filterAll();
         dc.redrawAll();
     };
 }
@@ -168,6 +175,7 @@ function avCloseInnerRange() {
                 var innerRangeElement = $(event.target).closest(".inner-range");
                 innerRangeElement.toggle("slide", {direction: "down"});
                 contentElement.find(".inner-range-handle").find("li").each(function (index, element) { $(this).removeClass("active");});
+                contentElement.find(".work-space-area").css({"padding-bottom": contentElement.find(".inner-range-handle").height()});
             });
         }
     };
@@ -293,8 +301,10 @@ function avOpenInnerRange() {
         restrict: "A",
         link: function (scope, element, attrs) {
             $(element).on("click", function (event) {
+                var contentElement = $(".av-body").find(".content");
                 var innerRangeElement = $(event.target).closest(".inner-range-handle").next();
                 if (innerRangeElement.css("display") === "none") {
+                    contentElement.find(".work-space-area").css({"padding-bottom": innerRangeElement.height() + 15});
                     innerRangeElement.toggle("slide", {direction: "down"});
                 }
             });
@@ -758,6 +768,7 @@ function avVisualizationProcessor($timeout) {
                                 },
                                 rangeBarChart: {
                                     dcLoader: dc.barChart,
+                                    dependency: "lineChart",
                                     dcBuilder: rangeBarChartBuilder
                                 }
                             };

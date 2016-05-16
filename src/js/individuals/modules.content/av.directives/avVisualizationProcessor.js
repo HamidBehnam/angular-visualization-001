@@ -423,6 +423,7 @@ function avVisualizationProcessor($timeout) {
                                 },
                                 rangeBarChart: {
                                     dcLoader: dc.barChart,
+                                    dependency: "lineChart",
                                     dcBuilder: rangeBarChartBuilder
                                 }
                             };

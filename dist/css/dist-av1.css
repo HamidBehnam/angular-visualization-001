@@ -260,4 +260,7 @@ body.av-body .widget-holder.filter .dc-chart {
 .work-space-area {
   height: calc(100vh - 50px);
   width: 100%;
+  padding-top: 2px;
+  padding-bottom: 125px;
+  overflow-y: auto;
 }

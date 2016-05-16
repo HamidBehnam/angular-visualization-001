@@ -19,17 +19,17 @@
   "workSpaces": [
     {
       "type": "bubbleChart",
-      "title": "Hamid",
+      "title": "Widget Title",
       "height": 250
     },
     {
       "type": "workBarChart",
-      "title": "Behnam",
+      "title": "Second Widget",
       "height": 180
     },
     {
       "type": "lineChart",
-      "title": "Could be anything",
+      "title": "Could be controlled by server",
       "height": 200
     }
   ],

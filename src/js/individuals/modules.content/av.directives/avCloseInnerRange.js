@@ -14,6 +14,7 @@ function avCloseInnerRange() {
                 var innerRangeElement = $(event.target).closest(".inner-range");
                 innerRangeElement.toggle("slide", {direction: "down"});
                 contentElement.find(".inner-range-handle").find("li").each(function (index, element) { $(this).removeClass("active");});
+                contentElement.find(".work-space-area").css({"padding-bottom": contentElement.find(".inner-range-handle").height()});
             });
         }
     };
