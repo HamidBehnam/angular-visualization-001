@@ -14,7 +14,9 @@ function avCloseInnerLeft(dcRedrawService) {
                 var innerLeftElement = contentElement.find(".inner-left");
                 var innerRightElement = contentElement.find(".inner-right");
                 var innerRangeElement = contentElement.find(".inner-range");
+                var innerRangeHandleElement = contentElement.find(".inner-range-handle");
                 innerRangeElement.animate({"width": "+=".concat(innerLeftElement.width())});
+                innerRangeHandleElement.animate({"width": "+=".concat(innerLeftElement.width())});
                 var reducedWidth = innerRightElement.css("display") === "none" ? 0 : innerRightElement.width();
                 innerLeftElement.closest(".content").animate({"margin-left": 0});
                 dcRedrawService.reDrawCharts(["bubbleChart", "workBarChart", "lineChart", "rangeBarChart"], scope.dcController.typeMap, reducedWidth);

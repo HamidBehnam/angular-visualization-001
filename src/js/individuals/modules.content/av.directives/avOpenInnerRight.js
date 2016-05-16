@@ -14,6 +14,7 @@ function avOpenInnerRight(dcRedrawService) {
                 var innerRightElement = contentElement.find(".inner-right");
                 var innerLeftElement = contentElement.find(".inner-left");
                 var innerRangeElement = contentElement.find(".inner-range");
+                var innerRangeHandleElement = contentElement.find(".inner-range-handle");
                 var reducedWidthForLeft = innerLeftElement.css("display") === "none" ? 0 : innerLeftElement.width();
                 var innerRightMenuWidth = innerRightElement.width();
 
@@ -22,6 +23,7 @@ function avOpenInnerRight(dcRedrawService) {
                 if (innerRightElement.css("display") === "none") {
                     innerRightElement.toggle('slide', {direction: 'right'});
                     innerRangeElement.animate({"width": "-=".concat(innerRightElement.width())});
+                    innerRangeHandleElement.animate({"width": "-=".concat(innerRightElement.width())});
                 }
             });
         }

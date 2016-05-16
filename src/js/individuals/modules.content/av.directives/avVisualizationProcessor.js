@@ -17,11 +17,13 @@ function avVisualizationProcessor($timeout) {
             var innerLeftElement = contentElement.find(".inner-left");
             var innerRightElement = contentElement.find(".inner-right");
             var rangeElement = contentElement.find(".inner-range");
+            var rangeHandleElement = contentElement.find(".inner-range-handle");
             var innerLeftWidth = innerLeftElement.width();
             var innerRightWidth = innerRightElement.width();
             contentElement.css("margin-right", innerRightWidth);
             contentElement.css("margin-left", innerLeftWidth);
             rangeElement.width(contentElement.width() - 10);
+            rangeHandleElement.width(contentElement.width());
             var pageController = angular.element(element).scope().dcController; /*ko.dataFor($(element)[0])*/
             scope.$watch("pageMap", function (newValue, oldValue) {
                 if (!Object.keys(newValue).length)

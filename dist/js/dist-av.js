@@ -148,7 +148,9 @@ function avCloseInnerLeft(dcRedrawService) {
                 var innerLeftElement = contentElement.find(".inner-left");
                 var innerRightElement = contentElement.find(".inner-right");
                 var innerRangeElement = contentElement.find(".inner-range");
+                var innerRangeHandleElement = contentElement.find(".inner-range-handle");
                 innerRangeElement.animate({"width": "+=".concat(innerLeftElement.width())});
+                innerRangeHandleElement.animate({"width": "+=".concat(innerLeftElement.width())});
                 var reducedWidth = innerRightElement.css("display") === "none" ? 0 : innerRightElement.width();
                 innerLeftElement.closest(".content").animate({"margin-left": 0});
                 dcRedrawService.reDrawCharts(["bubbleChart", "workBarChart", "lineChart", "rangeBarChart"], scope.dcController.typeMap, reducedWidth);
@@ -197,7 +199,9 @@ function avCloseInnerRight(dcRedrawService) {
                 var innerRightElement = contentElement.find(".inner-right");
                 var innerLeftElement = contentElement.find(".inner-left");
                 var innerRangeElement = contentElement.find(".inner-range");
+                var innerRangeHandleElement = contentElement.find(".inner-range-handle");
                 innerRangeElement.animate({"width": "+=".concat(innerRightElement.width())});
+                innerRangeHandleElement.animate({"width": "+=".concat(innerRightElement.width())});
                 var reducedWidth = innerLeftElement.css("display") === "none" ? 0 : innerLeftElement.width();
                 innerRightElement.closest(".content").animate({"margin-right": 0});
                 dcRedrawService.reDrawCharts(["bubbleChart", "workBarChart", "lineChart", "rangeBarChart"], scope.dcController.typeMap, reducedWidth);
@@ -275,6 +279,7 @@ function avOpenInnerLeft(dcRedrawService) {
                 var innerLeftElement = contentElement.find(".inner-left");
                 var innerRightElement = contentElement.find(".inner-right");
                 var innerRangeElement = contentElement.find(".inner-range");
+                var innerRangeHandleElement = contentElement.find(".inner-range-handle");
                 var innerLeftMenuWidth = innerLeftElement.width();
                 var reducedWidthForRight = innerRightElement.css("display") === "none" ? 0 : innerRightElement.width();
 
@@ -283,6 +288,7 @@ function avOpenInnerLeft(dcRedrawService) {
                 if (innerLeftElement.css("display") === "none") {
                     innerLeftElement.toggle('slide');
                     innerRangeElement.animate({"width": "-=".concat(innerLeftElement.width())});
+                    innerRangeHandleElement.animate({"width": "-=".concat(innerLeftElement.width())});
                 }
             });
         }
@@ -328,6 +334,7 @@ function avOpenInnerRight(dcRedrawService) {
                 var innerRightElement = contentElement.find(".inner-right");
                 var innerLeftElement = contentElement.find(".inner-left");
                 var innerRangeElement = contentElement.find(".inner-range");
+                var innerRangeHandleElement = contentElement.find(".inner-range-handle");
                 var reducedWidthForLeft = innerLeftElement.css("display") === "none" ? 0 : innerLeftElement.width();
                 var innerRightMenuWidth = innerRightElement.width();
 
@@ -336,6 +343,7 @@ function avOpenInnerRight(dcRedrawService) {
                 if (innerRightElement.css("display") === "none") {
                     innerRightElement.toggle('slide', {direction: 'right'});
                     innerRangeElement.animate({"width": "-=".concat(innerRightElement.width())});
+                    innerRangeHandleElement.animate({"width": "-=".concat(innerRightElement.width())});
                 }
             });
         }
@@ -362,11 +370,13 @@ function avVisualizationProcessor($timeout) {
             var innerLeftElement = contentElement.find(".inner-left");
             var innerRightElement = contentElement.find(".inner-right");
             var rangeElement = contentElement.find(".inner-range");
+            var rangeHandleElement = contentElement.find(".inner-range-handle");
             var innerLeftWidth = innerLeftElement.width();
             var innerRightWidth = innerRightElement.width();
             contentElement.css("margin-right", innerRightWidth);
             contentElement.css("margin-left", innerLeftWidth);
             rangeElement.width(contentElement.width() - 10);
+            rangeHandleElement.width(contentElement.width());
             var pageController = angular.element(element).scope().dcController; /*ko.dataFor($(element)[0])*/
             scope.$watch("pageMap", function (newValue, oldValue) {
                 if (!Object.keys(newValue).length)
