@@ -22,5 +22,12 @@
     "iconClass": "fa-download",
     "url": "https://github.com/HamidBehnam/angular-visualization-001/archive/master.zip",
     "newWindow": false
+  },
+  {
+    "title": "License",
+    "viewKey": "license",
+    "iconClass": "fa-deviantart",
+    "url": "https://github.com/HamidBehnam/angular-visualization-001/blob/master/LICENSE.md",
+    "newWindow": true
   }
 ]
